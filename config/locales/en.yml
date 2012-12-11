@@ -1,5 +1,4 @@
 en:
-
   users:
     new:
       title: Register profile
@@ -20,10 +19,19 @@ en:
       edit: "Update Room"
       location: "Location: %{location}"
       title: "Room: %{room_title}"
+  signup_mailer:
+    confirm_email:
+      subject: 'Colcho.net - confirme seu email'
+      title:  'Seja bem vindo ao Colcho.net'
+      body:
+           'Welcome to Colcho.net, %{full_name}.
+           The Colcho.net is the ideal place for you to rent one room
+           left at his home and still meet people worldwide.'
+      confirm_link_html: 'For you to start using the site, visit the link: %{link}'
+      thanks_html: 'Thank you for registering at %{link}'
   links:
     back: Back
     edit: Edit
-
   layout:
     rooms: Rooms
     signup: Signup
@@ -47,5 +55,3 @@ en:
         description: Description
         location: Location
         title: Title
-
-
