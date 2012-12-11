@@ -1,5 +1,51 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+
+  users:
+    new:
+      title: Register profile
+    edit:
+      title: Update profile
+    show:
+      title: "Profile: %{user_name}"
+      edit: 'Update Profile'
+      location: "Location: %{location}"
+      bio:  "Bio: %{bio}"
+  rooms:
+    new:
+      title: Create Room
+    edit:
+      title: Update Room
+    show:
+      description: "Description: %{description}"
+      edit: "Update Room"
+      location: "Location: %{location}"
+      title: "Room: %{room_title}"
+  links:
+    back: Back
+    edit: Edit
+
+  layout:
+    rooms: Rooms
+    signup: Signup
+
+  general:
+    form_error: Há erros no formulário, por favor verifique.
+
+  activerecord:
+    models:
+      user: User
+      room: Room
+    attributes:
+      user:
+        bio: Bio
+        full_name: Full name
+        location: Location
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+      room:
+        description: Description
+        location: Location
+        title: Title
+
+
