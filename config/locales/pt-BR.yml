@@ -8,14 +8,18 @@
     show:
       title: "Perfil: %{user_name}"
       edit: 'Editar Perfil'
-      location: "Localizaçõa %{location}"
+      location: "Localização: %{location}"
       bio:  "Bio: %{bio}"
   rooms:
     new:
       title: Cadastrar Quarto
     edit:
       title: Editar Quarto
-
+    show:
+      description: "Descrição: %{description}"
+      edit: "Editar Quarto"
+      location: "Localização: %{location}"
+      title: "Quarto: %{room_title}"
   links:
     back: Voltar
     edit: Editar
