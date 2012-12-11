@@ -19,6 +19,8 @@
 	}
 
 	header {
+		padding-top: 15px;
+
 		@include shadow(#ccc, 0, 3px, 6px);
 		border-bottom: 1px solid #686;
 		margin-bottom: 15px;
@@ -56,7 +58,7 @@
 			padding: 7px 10px;
 			-moz-border-radius: 5px;
 			border-radius: 5px;
-			a {
+			a, a:visited, a:hover {
 				font-size: 12px;
 				font-weight: 600;
 				color: #fff;

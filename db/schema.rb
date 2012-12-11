@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20121211214449) do
     t.text     "bio"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.datetime "confirmated_at"
+    t.datetime "confirmed_at"
     t.string   "confirmation_token"
   end
 
