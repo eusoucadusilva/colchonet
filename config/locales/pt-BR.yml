@@ -2,7 +2,6 @@
   users:
     confirmations:
       success: Email confirmado com sucesso, obrigado!
-
     new:
       title: Cadastrar Perfil
     edit:
@@ -22,6 +21,11 @@
       edit: "Editar Quarto"
       location: "Localização: %{location}"
       title: "Quarto: %{room_title}"
+
+  user_sessions:
+    new:
+      title: 'Login'
+      signup: 'Cadastre-se'
   signup_mailer:
     confirm_email:
       subject: 'Colcho.net - confirme seu email'
@@ -59,3 +63,15 @@
         description: Descrição
         location: Localização
         title: Título
+      activemodel:
+        attributes:
+          user_session:
+            email: Email
+            password: Senha
+        errors:
+          messages:
+            invalid_login: 'Usuário ou senha inválidos'
+      helpers:
+        submit:
+          user_session:
+            create: 'Entrar'
