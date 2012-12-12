@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+	before_filter :require_no_authenticate, :only =>[:new,:create]
+	before_filter :can_change, :only =>[:edit, :update]
+
 	def new
 		@user = User.new
 	end
@@ -31,5 +34,14 @@ class UsersController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+private
+	def can_change
+		unless user_signed_in? && current_user == user
+	end
+
+	def user
+		@user ||= User.find(params[:id])
 	end
 end
