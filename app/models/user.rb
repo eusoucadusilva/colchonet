@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
+
+  #attributes and acessors
   attr_accessible :bio, :email, :full_name, :location,
   				  :password, :password_confirmation
 
+
+  #validates
   validates_presence_of 	:full_name, :email, :location #,:password
   #validates_confirmation_of :password
   validates_length_of		:bio, :minimum => 30, :allow_blank => false
@@ -10,11 +14,20 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  #scopes
+  scope :confirmed, where('confirmed_at IS NOT NULL')
 
+  #callbacks
   before_create :generate_token
 
+
+  #functions
   def generate_token
   	self.confirmation_token = SecureRandom.urlsafe_base64
+  end
+
+  def confirmed?
+    confirmed_at.present?
   end
 
   def confirm!
@@ -25,8 +38,9 @@ class User < ActiveRecord::Base
   	save!
   end
 
-  def confirmed?
-  	confirmed_at.present?
+  def self.authenticate(email,password)
+    confirmed.
+    find_by_email(email).
+    try(:authenticate, password)
   end
-
 end
