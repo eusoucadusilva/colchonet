@@ -1,5 +1,8 @@
 ﻿pt-BR:
   users:
+    confirmations:
+      success: Email confirmado com sucesso, obrigado!
+
     new:
       title: Cadastrar Perfil
     edit:
