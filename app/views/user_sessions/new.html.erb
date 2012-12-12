@@ -1,4 +1,6 @@
-<h1><%t '.title' %></h1>
+<%=session%>
+
+<h1><%=t 'user_sessions.new.title' %></h1>
 
 <% if @session.errors.has_key? :base %>
 	<div id="error_explanation">
@@ -24,4 +26,4 @@
 	</p>
 <% end %>
 
-<p><%=link_to t('.sign_up'), new_user_path %></p>
+<p><%=link_to t('user_sessions.new.sign_up'), new_user_path %></p>

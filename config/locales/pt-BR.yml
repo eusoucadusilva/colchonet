@@ -25,7 +25,7 @@
   user_sessions:
     new:
       title: 'Login'
-      signup: 'Cadastre-se'
+      sign_up: 'Cadastre-se'
   signup_mailer:
     confirm_email:
       subject: 'Colcho.net - confirme seu email'
