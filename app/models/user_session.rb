@@ -8,6 +8,7 @@ class UserSession
 
 	attr_accessor :email, :password
 
+	validates_presence_of :email, :password
 
 	def initialize(session, attributes ={})
 		@session = session
@@ -30,11 +31,19 @@ class UserSession
 		end
 	end
 
-
-	validates_presence_of :email, :password
-
 	def persisted?
 		false
 	end
 
+	def current_user
+		User.find(@session[:user_id])
+	end
+		
+	def user_signed_in?
+		@session[:user_id].present?
+	end
+
+	def destroy
+		@session[:user_id] = nil
+	end
 end
