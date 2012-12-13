@@ -6,6 +6,8 @@ class Room < ActiveRecord::Base
 	validates_presence_of :title, :location
 	validates_length_of :description, :minimum => 30, :allow_blank => false
 
+	scope :romm_recent, order('create_at desc')
+
 	def complete_name
 		"#{title} #{location}"
 	end
