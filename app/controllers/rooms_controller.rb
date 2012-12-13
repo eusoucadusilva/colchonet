@@ -42,6 +42,5 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @room.destroy
     redirect_to rooms_url
-    end
   end
 end

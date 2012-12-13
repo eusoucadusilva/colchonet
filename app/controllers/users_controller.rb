@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :require_no_authenticate, :only =>[:new,:create]
+	before_filter :require_no_authentication, :only =>[:new,:create]
 	before_filter :can_change, :only =>[:edit, :update]
 
 	def new
@@ -39,6 +39,8 @@ class UsersController < ApplicationController
 private
 	def can_change
 		unless user_signed_in? && current_user == user
+			redirect_to user_path(params[:id])
+		end
 	end
 
 	def user
