@@ -1,9 +1,3 @@
 <h2><%=t "rooms.show.title", :room_title => @room.title %></h2>
 
-<ul>
-	<li><%=t "rooms.show.location", :location => @room.location %></li>
-	<li><%=t "rooms.show.description", :description => @room.description %></li>
-</ul>
-
-<%= link_to t('rooms.show.edit'), edit_room_path(@room) %> |
-<%= link_to t('links.back'), rooms_path %>
+<%=render @room %>
