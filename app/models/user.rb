@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many :rooms
+  has_many :rooms,    :dependent => :destroy
+  has_many :reviews,  :dependent => :destroy
   #attributes and acessors
   attr_accessible :bio, :email, :full_name, :location,
   				  :password, :password_confirmation
