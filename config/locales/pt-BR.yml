@@ -22,6 +22,8 @@
       location: "Localização: %{location}"
       bio:  "Bio: %{bio}"
   rooms:
+    review:
+      login_to_review: 'Faça o login para avaliar quartos'
     index:
       title: 'Quartos disponíveis'
     room:
@@ -71,6 +73,7 @@
     models:
       user: Usuário
       room: Quarto
+      review: Avaliação
     attributes:
       user:
         bio: Biografia

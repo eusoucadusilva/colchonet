@@ -9,6 +9,9 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+
+    if user_sign_in?
+      @user_review = @room.reviews.find_or_initialize_by_user_id(current_user.id)
   end
 
   def new
