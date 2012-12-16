@@ -1,5 +1,5 @@
 <% if room.can_review? %>
-	<%= form_for room.review_route do |f| %>
+	<%= form_for room.review_route, :route => true do |f| %>
 			<% room.review_points.each do |point| %>
 				<%= f.radio_button :points, point %>
 				<%= f.label :points, point, :value => point %>
