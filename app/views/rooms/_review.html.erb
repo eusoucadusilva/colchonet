@@ -1,17 +1,5 @@
 <section class="review">
-	<% if user_sign_in? %>
-		<%=form_for [review.room, review] do |f| %>
-			<% Review::POINTS.each do |point|%>
-				<%=f.radio_button :points, point %>
-				<%=f.label :points, point, :value => point %>
-			<% end %>
-
-			<%=f.submit%>
-
-		<% end %>
-	<% else %>
-		<span class="login_required">
-			<%=t('.login_to_review') %>
-		</span>
+	<% if room.show_form? %>
+		<%=render :partial => 'review_form', :locals => {:room => room } %>
 	<% end %>
 </section>

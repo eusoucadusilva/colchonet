@@ -4,14 +4,14 @@ class RoomsController < ApplicationController
   :only =>[:new,:edit,:create, :update, :destroy]
 
   def index
-    @rooms = Room.most_recent
+    @rooms = Room.most_recent.map do |room|
+      RoomPresenter.new(room, self, false)
+    end
   end
 
   def show
-    @room = Room.find(params[:id])
-
-    if user_sign_in?
-      @user_review = @room.reviews.find_or_initialize_by_user_id(current_user.id)
+    room_model = Room.find(params[:id])
+    @room = RoomPresenter.new(room_model,self)
   end
 
   def new
