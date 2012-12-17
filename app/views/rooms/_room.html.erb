@@ -4,12 +4,18 @@
     <span class="created">
       <%=t '.owner_html',:owner => room.user.full_name,:when => l(room.created_at, :format => :short) %>
     </span>
+
+    <h2>
+      <%=link_to highlight(room.title, @search_query), room.route %>
+    </h2>
+
     <p>
       <span class="location">
-        <%=link_to room.location, "https://maps.google.com/?q=#{room.location}", :target => :blank %>
+        <%=link_to highlight(room.location, @search_query),
+         "https://maps.google.com/?q=#{room.location}", :target => :blank %>
       </span>
     </p>
-    <p><%=room.description%></p>
+    <p><%=highlight(room.description, @search_query) %></p>
 
     <% if belongs_to_user(room) %>
       <ul>
