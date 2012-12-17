@@ -1,5 +1,45 @@
 @import "shadow";
 
+.review form > input {
+	display:none;
+}
+
+
+.review label.toggled i {
+	color: gold;
+}
+
+.review label i {
+	font-size: 18px;
+	text-shadow: 1px 1px #999;
+	cursor:pointer;
+	color: #ccc;
+}
+
+
+.review .icon-ok,
+.review .icon-remove {
+	position: absolute;
+	right: 0;
+}
+
+.review .star {
+	font-family: "FontAwesome";
+	font-size: 18px;
+}
+
+.review .filled_star {
+	color: gold;
+	text-shadow: 1px 1px #999;
+	&:before { content: "\f005"; }
+}
+
+.review .empty_star {
+	color: #aaa;
+	&:before { content: "\f006"; }
+}
+
+
 .room{
 	background-color: white;
 	padding:20px 25px;
@@ -21,6 +61,7 @@
 	padding:0;
 	float:right;
 	border: none;
+	position: relative;
 }
 
 .review label{

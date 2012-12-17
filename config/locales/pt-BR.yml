@@ -22,12 +22,12 @@
       location: "Localização: %{location}"
       bio:  "Bio: %{bio}"
   rooms:
-    review:
+    review_form:
       login_to_review: 'Faça o login para avaliar quartos'
+    review:
       stats:
-        zero: 'Não há avaliações'
-        one: '%{average}/%{max} (1 avaliação)'
-        other: '%{average}/%{max} (%{count} avaliações)'
+        one: '(1 avaliação)'
+        other: '(%{count} avaliações)'
     index:
       title: 'Quartos disponíveis'
     room:

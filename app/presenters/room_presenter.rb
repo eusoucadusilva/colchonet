@@ -1,5 +1,9 @@
 class RoomPresenter
-	delegate :user, :created_at, :description, :location, :title, :to => :@room
+
+	attr_accessor :user
+
+	delegate :user, :created_at, :description, :location, :title,
+    :to => :@room
 
 	def initialize(room,context,show_form=true)
 		@context = context
@@ -8,7 +12,7 @@ class RoomPresenter
 	end
 
 	def can_review?
-		@context.user_signed_in?
+		@context.user_signed_in? && show_form?
 	end
 
 	def show_form?
@@ -16,7 +20,8 @@ class RoomPresenter
 	end
 
 	def review
-		@review ||= @room.reviews.find_or_initialize_by_user_id(@context.current_user)
+		@review ||= @room.reviews.
+		find_or_initialize_by_user_id(@context.current_user.id)
 	end
 
 	def review_route
@@ -35,10 +40,6 @@ class RoomPresenter
 		'room'
 	end
 
-	def review_points
-		Review::POINTS
-	end
-
 	def stars
 		@room .reviews.stars
 	end
@@ -46,5 +47,4 @@ class RoomPresenter
 	def total_reviews
 		@room.reviews.size
 	end
-
 end
