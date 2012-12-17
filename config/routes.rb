@@ -4,7 +4,7 @@ Colchonet::Application.routes.draw do
 
 	scope "(:locale)", :locale => LOCALES do
 	  resources :rooms do
-	  	resources :reviews, :only => [:create, :update], :module => :room
+	  	resources :reviews, :only => [:create, :update], :module => :rooms
 	  end
 
 
