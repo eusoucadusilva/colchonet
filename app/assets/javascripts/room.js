@@ -14,10 +14,7 @@ $(function(){
 	})
 
 	function replaceButton(container, icon_class, color){
-		$(container).find('input:submit').
-		replaceWith(
-					$('<i/>')
-					).
+		$(container).find('input:submit').replaceWith($('<i/>')).
 			addClass(icon_class).
 			css('color', color);
 	};
