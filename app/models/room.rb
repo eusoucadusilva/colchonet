@@ -1,13 +1,16 @@
 class Room < ActiveRecord::Base
+	extend FriendlyId
  
  	has_many :reviews,:dependent => :destroy
  	has_many :reviewed_rooms, :through => :reviews, :source => :room
  	
 	belongs_to :user
-	attr_accessible :description, :location, :title
+	attr_accessible :description, :location, :title, :slug
 
-	validates_presence_of :title, :location
+	validates_presence_of :title, :slug, :location
 	validates_length_of :description, :minimum => 30, :allow_blank => false
+
+	friendly_id :title , use: :slugged
 
 	scope :most_recent, order('created_at desc')
 
