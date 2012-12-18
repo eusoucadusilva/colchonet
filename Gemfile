@@ -6,9 +6,16 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
+#url pretty
 gem 'friendly_id', '~> 4.0.1'
+
+#paginação
 gem 'kaminari'
 
+#upload image
+gem 'carrierwave'
+gem 'rmagick'
 
 # Gems used only for assets and not required
 # in production environments by default.

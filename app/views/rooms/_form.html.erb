@@ -24,6 +24,12 @@
   </p>
 
   <p>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+    <%= error_tag @room, :picture %>
+  </p>
+
+  <p>
     <%= f.submit %>
   </p>
 <% end %>

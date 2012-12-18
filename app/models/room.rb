@@ -5,11 +5,12 @@ class Room < ActiveRecord::Base
  	has_many :reviewed_rooms, :through => :reviews, :source => :room
  	
 	belongs_to :user
-	attr_accessible :description, :location, :title, :slug
+	attr_accessible :description, :location, :title, :picture
 
 	validates_presence_of :title, :slug, :location
 	validates_length_of :description, :minimum => 30, :allow_blank => false
 
+	mount_uploader :picture, PictureUpdaloader
 	friendly_id :title , use: :slugged
 
 	scope :most_recent, order('created_at desc')
