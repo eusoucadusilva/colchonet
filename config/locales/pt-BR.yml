@@ -1,4 +1,11 @@
 ﻿pt-BR:
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Próximo &rsaquo;"
+      truncate: "..."
   dialogs:
     destroy: 'você tem certeza que quer remover?'
   flash:
