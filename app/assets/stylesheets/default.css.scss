@@ -51,6 +51,7 @@
 
 				&:hover {
 					color: #000;
+					background: none;
 				}
 			}
 		}
@@ -70,6 +71,7 @@
 				font-size: 12px;
 				font-weight: 600;
 				color: #fff;
+				background: none;
 			}
 		}
 	}
@@ -83,6 +85,7 @@
 
 		a, a:visited, a:hover {
 			color: #242;
+			background: none;
 			&:hover { text-decoration: underline; }
 		}
 
