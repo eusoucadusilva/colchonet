@@ -1,4 +1,11 @@
 ﻿pt-BR:
+  activemodel:
+    errors:
+      models:
+        user_session:
+          attributes:
+            base:
+              invalid_login: 'usuário e/ou senha inválidos!' 
   views:
     pagination:
       first: "&laquo; Primeira"

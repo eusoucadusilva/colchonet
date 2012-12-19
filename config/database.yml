@@ -3,7 +3,7 @@ development:
   database: colchonet_dev
   host: localhost
   username: postgres
-  password: suasenha
+  password: mj915077
   pool: 5
   timeout: 5000
 
@@ -12,6 +12,6 @@ test:
   database: colchonet_test
   host: localhost
   username: postgres
-  password: suasenha
+  password: mj915077
   pool: 5
   timeout: 5000
